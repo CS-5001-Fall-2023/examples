@@ -6,6 +6,8 @@ covert that to minutes.
 
 """
 
+SECONDS_PER_MINUTE = 60
+
 def main():
 	# ask the user for the number
 	#    - store the number
@@ -17,7 +19,7 @@ def main():
 
 	# math operators: + - * / % //
 	# perform the calculation from s to m
-	minutes = seconds / 60
+	minutes = seconds / SECONDS_PER_MINUTE
 
 	# output the result
 	print(f'{seconds} seconds is {minutes} minutes')
