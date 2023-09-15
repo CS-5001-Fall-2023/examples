@@ -9,7 +9,8 @@ def welcome():
 	You can print this documentation using 
 	print(welcome.__doc__)
 	'''
-	pass
+	print(f'Hello class!')
+	print(f'Welcome to CS 5001.')
 
 def greet_by_name(name: str):
 	'''
@@ -19,7 +20,14 @@ def greet_by_name(name: str):
 	name: str
 		name of the user
 	'''
-	pass
+	# first draft:
+	# print(f'Hello, {name}')
+	# print(f'How are you today?')
+
+	# an example of a function calling other functions
+	greeting = get_greeting()
+	welcome_by_name_with_greeting(name, greeting)
+
 
 def get_greeting() -> str:
 	'''
@@ -29,7 +37,8 @@ def get_greeting() -> str:
 	str 
 		greeting provided by the user
 	'''
-	pass
+	user_input = input('Enter a greeting: ')
+	return user_input
 
 def welcome_by_name_with_greeting(name: str, greeting: str):
 	'''
@@ -42,11 +51,14 @@ def welcome_by_name_with_greeting(name: str, greeting: str):
 	greeting: str
 		greeting to use
 	'''
-	pass
 
+	print(f'{greeting} {name}. How are you?')
+	print(f'I would like to welcome you (by name with greeting).')
 
 def main():
-	pass
+	# welcome_by_name_with_greeting('sami', 'hello')
+	greet_by_name('sami')
+
 
 if __name__ == '__main__':
 	main()
