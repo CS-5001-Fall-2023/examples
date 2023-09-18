@@ -16,3 +16,37 @@ Hints:
 - Grading will primarily depend upon how you decompose your program into functions. - Consider the steps listed above as you think about which functions to implement.
 - You must validate the user input to confirm that it is either rock, paper, or scissors. 
 '''
+
+# get the user's choice -- expect rock, paper, or scissors
+#   * name -- user_choice
+#	* inputs (parameters) -- none?
+#	* output (return value) -- string (or int?)
+#	* logic
+
+# get the computer's choice -- choose random number
+# compare -- determine winner
+# show the result
+
+
+
+
+import random
+
+def main():
+	value = random.randint(1, 3)
+	print(value)
+
+if __name__ == '__main__':
+	main()
+
+
+
+
+
+
+
+
+
+
+
+

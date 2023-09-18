@@ -4,10 +4,26 @@ When squirrels get together for a party, they like to have cigars. A squirrel pa
 
 def cigar_party(cigars: int, is_weekend: bool) -> bool:
 	# partial solution for cigar_party problem
-	if is_weekend == True and cigars >= 40:
-		return True
-	elif is_weekend == True and cigars < 40:
+	# if is_weekend == True and cigars >= 40:
+	# 	return True
+	# elif is_weekend == True and cigars < 40:
+	# 	return False
+	if cigars < 40:
+		# print('cigars < 40 -- returning False')
 		return False
+	else:
+		# print('cigars >= 40 -- checking is_weekend')
+		if is_weekend == True:
+			# print('is_weekend is True -- returning True')
+			return True
+		else:
+			# print('is_weekend is False -- checking cigars again')
+			if cigars <= 60:
+				# print('cigars <= 60 -- returning True')
+				return True
+			else: 
+				# print('cigars not <= 60 -- returning False')
+				return False
 
 def main():
 	
