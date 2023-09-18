@@ -14,8 +14,21 @@ def main():
 	result = cigar_party(70, True)
 	print(f'cigar_party(70, True) is {result}')
 
+	result = cigar_party(70, False)
+	print(f'cigar_party(70, False) is {result}')
+
 	result = cigar_party(30, True)
 	print(f'cigar_party(30, True) is {result}')
+
+	result = cigar_party(30, False)
+	print(f'cigar_party(30, False) is {result}')
+
+	result = cigar_party(50, True)
+	print(f'cigar_party(50, True) is {result}')
+
+	result = cigar_party(50, False)
+	print(f'cigar_party(50, False) is {result}')
+
 
  	# How many tests do we need to do
 	# to ensure that our function
@@ -25,7 +38,8 @@ def main():
 	70, True -> True
 	70, False -> False
 	30, True/False -> False
-	50, False -> True	
+	50, False -> True
+	50, True -> True	
 	'''
 
 if __name__ == '__main__':
