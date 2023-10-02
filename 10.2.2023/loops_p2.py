@@ -49,12 +49,6 @@ def multiples_of_5(number: int):
 		# 	print(i)
 		print(i)
 
-def count_vowels(sentence: str) -> int:
-	'''
-	A function that takes as input a string and returns the number
-	of vowels (a, e, i, o, u) that are found in the sentence.
-	'''
-	pass
 
 def generate_user_names(first_names: list[str], 
 	last_names: list[str]) -> list[str]:
@@ -72,9 +66,34 @@ def generate_user_names(first_names: list[str],
 def nested_loops():
 	pass
 
+def is_vowel(char):
+	vowel = ('a', 'e', 'i', 'o', 'u')
+	char = char.lower()
+	return char in vowel
+	
+	# if (char == 'a' 
+	# 	or char == 'e'
+	# 	or char == 'i'
+	# 	or char == 'o'
+	# 	or char == 'u'):
+	# 	return True
+	# return False
+
+def count_vowels(sentence: str) -> int:
+	'''
+	A function that takes as input a string and returns the number
+	of vowels (a, e, i, o, u) that are found in the sentence.
+	'''
+	count = 0
+	for char in sentence:
+		if is_vowel(char):
+			count += 1
+	return count
+
+
 def main():
-	# fun_with_for_loops()
-	multiples_of_5(15)
+	result = count_vowels('the cat and the hAt')
+	print(result)
 
 if __name__ == '__main__':
 	main()
