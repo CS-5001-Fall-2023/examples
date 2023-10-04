@@ -1,6 +1,7 @@
 '''
 Practice with for loops!
 '''
+VOWELS = ('a', 'e', 'i', 'o', 'u')
 
 def fun_with_for_loops():
 	# Remember to call this function :)
@@ -61,16 +62,16 @@ def generate_user_names(first_names: list[str],
 	of the last name stored at the ith position of the last_names
 	list.
 	'''
+	# for first, last in zip(first_names, last_names):
+	# 	print(f'First: {first} Last: {last}')	
 	pass
 
 def nested_loops():
 	pass
 
-def is_vowel(char):
-	vowel = ('a', 'e', 'i', 'o', 'u')
-	char = char.lower()
-	return char in vowel
-	
+def is_vowel(char: str) -> bool:	
+	return char in VOWELS
+
 	# if (char == 'a' 
 	# 	or char == 'e'
 	# 	or char == 'i'
@@ -85,15 +86,29 @@ def count_vowels(sentence: str) -> int:
 	of vowels (a, e, i, o, u) that are found in the sentence.
 	'''
 	count = 0
-	for char in sentence:
+	lower_case_sentence = sentence.lower()
+	for char in lower_case_sentence:
 		if is_vowel(char):
-			count += 1
+			count += 1			
 	return count
 
-
 def main():
-	result = count_vowels('the cat and the hAt')
-	print(result)
+
+	first_names = ['joe', 'jane', 'sally']
+	last_names = ['ortega', 'saberi', 'berketrollins']
+	# [jortega, jsaberi, sberketr]
+
+
+
+	# result = count_vowels('hello')
+	# print(f'result: {result} expected result: 2')
+
+	# result = count_vowels('hello hello')
+	# print(f'result: {result} expected result: 4')
+
+	# result = count_vowels('hEllo hellO')
+	# print(f'result: {result} expected result: 4')
+
 
 if __name__ == '__main__':
 	main()
