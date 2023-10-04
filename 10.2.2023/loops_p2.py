@@ -62,12 +62,54 @@ def generate_user_names(first_names: list[str],
 	of the last name stored at the ith position of the last_names
 	list.
 	'''
-	# for first, last in zip(first_names, last_names):
-	# 	print(f'First: {first} Last: {last}')	
-	pass
+	usernames = []
+	for first, last in zip(first_names, last_names):
+		# usernames.append(first[0] + last[:7])
+
+		# get first char of first name
+		first_initial = first[0]
+		
+		# get first 7 characters of last name
+		last_part = last[:7]
+
+		# append together to create username
+		username = first_initial + last_part
+
+		# add username to list
+		usernames.append(username)
+
+	return usernames
 
 def nested_loops():
-	pass
+	board = [
+				['x', '-', 'x'], 
+				['o', '-', '-'],
+				['-', '-', '-']
+			]
+
+	for row in board:
+		# list that represents a row
+		for col in row:
+			print(col, end=' ')
+		print()
+
+def gradebook():
+	grades  = [
+				[95, 99, 82],
+				[90.5, 92, 84],
+				[85, 79, 82],
+				]
+
+	# student 1: XXX
+	# student 2: YYY
+	# student 3: ZZZ
+	for student_id, student in enumerate(grades):
+		sum = 0
+		for grade in student:
+			sum += grade
+		avg = sum / len(student)
+		print(f'student {student_id+1}: {avg}')
+
 
 def is_vowel(char: str) -> bool:	
 	return char in VOWELS
@@ -94,9 +136,14 @@ def count_vowels(sentence: str) -> int:
 
 def main():
 
-	first_names = ['joe', 'jane', 'sally']
-	last_names = ['ortega', 'saberi', 'berketrollins']
-	# [jortega, jsaberi, sberketr]
+	gradebook()
+
+	# nested_loops()
+
+	# first_names = ['joe', 'jane', 'sally']
+	# last_names = ['ortega', 'saberi', 'berketrollins']
+	# # [jortega, jsaberi, sberketr]
+	# print(generate_user_names(first_names, last_names))
 
 
 
