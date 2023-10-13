@@ -89,7 +89,7 @@ def find_char_a(string: str) -> int:
 	a single character of the string in any iteration of the 
 	function.
 	"""
-	pass
+	pass	
 
 def in_english(number: int) -> str:
 	"""
@@ -108,7 +108,7 @@ def binarysearch(list: list[int], target: int) -> bool:
  	pass
 
 def main():
-	print_nums_recursive(5)
+	pass
 
 if __name__ == '__main__':
 	main()
