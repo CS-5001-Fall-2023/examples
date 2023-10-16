@@ -84,12 +84,40 @@ def print_nums_helper(current: int, n: int):
 def find_char_a(string: str) -> int:
 	"""
 	Implement a function that returns the number of times the 
-	character "a" appears in a str without using a loop. You 
-	may not take a slice of the string, and you may only access 
+	character "a" appears in a str without using a loop. 
+
+	You may only access 
 	a single character of the string in any iteration of the 
 	function.
 	"""
-	pass	
+	# if len(string) == 0:
+	# 	return 0
+
+	# if string[0] == 'a':
+	# 	return 1 + find_char_a(string[1:])
+	# else:
+	# 	return find_char_a(string[1:])
+	return find_char_a_helper(string, 0)
+
+def find_char_a_helper(string: str, index: int) -> int:
+	if index == len(string):
+		return 0
+	if string[index] == 'a':
+		result = find_char_a_helper(string, index + 1)
+		return 1 + result
+	else:
+		result = find_char_a_helper(string, index + 1)
+	 	return result
+
+def a_to_b(string: str) -> str:
+	"""
+	Write a recursive function that takes as input a string
+	and returns a new string where all instances of the
+	character a are replaced with the character b.
+	You may access position 0 of the string and you 
+	may take a slice of the string
+	"""
+	pass
 
 def in_english(number: int) -> str:
 	"""
@@ -108,7 +136,7 @@ def binarysearch(list: list[int], target: int) -> bool:
  	pass
 
 def main():
-	pass
+	print(find_char_a(''))
 
 if __name__ == '__main__':
 	main()
