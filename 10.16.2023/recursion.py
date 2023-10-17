@@ -90,14 +90,14 @@ def find_char_a(string: str) -> int:
 	a single character of the string in any iteration of the 
 	function.
 	"""
-	# if len(string) == 0:
-	# 	return 0
+	if len(string) == 0:
+		return 0
 
-	# if string[0] == 'a':
-	# 	return 1 + find_char_a(string[1:])
-	# else:
-	# 	return find_char_a(string[1:])
-	return find_char_a_helper(string, 0)
+	if string[0] == 'a':
+		return 1 + find_char_a(string[1:])
+	else:
+		return find_char_a(string[1:])
+	# return find_char_a_helper(string, 0)
 
 def find_char_a_helper(string: str, index: int) -> int:
 	if index == len(string):
@@ -107,7 +107,7 @@ def find_char_a_helper(string: str, index: int) -> int:
 		return 1 + result
 	else:
 		result = find_char_a_helper(string, index + 1)
-	 	return result
+		return result
 
 def a_to_b(string: str) -> str:
 	"""
@@ -117,7 +117,11 @@ def a_to_b(string: str) -> str:
 	You may access position 0 of the string and you 
 	may take a slice of the string
 	"""
-	pass
+	if len(string) == 0:
+		return ''
+	if string[0] == 'a':
+		return 'b' + a_to_b(string[1:])
+	return string[0] + a_to_b(string[1:])	
 
 def in_english(number: int) -> str:
 	"""
@@ -126,17 +130,81 @@ def in_english(number: int) -> str:
 	the digits of the number in English. For example, 
 	in_english(153) would return "one five three".
 	"""
-	pass
+	if number < 10:
+		return num_to_string(number)
+	return (in_english(number // 10) + ' ' 
+		+ num_to_string(number % 10))
 
-def binarysearch(list: list[int], target: int) -> bool:
+def num_to_string(number: int) -> str:
+	# Using a match statement rather than a
+	# large set of if statements
+	match number:
+		case 0: 
+			return 'zero'
+		case 1: 
+			return 'one'
+		case 2: 
+			return 'two'
+		case 3: 
+			return 'three'
+		case 4: 
+			return 'four'
+		case 5: 
+			return 'five'
+		case 6: 
+			return 'six'
+		case 7: 
+			return 'seven'
+		case 8: 
+			return 'eight'
+		case 9: 
+			return 'nine'
+	# if number == 0:
+	# 	return 'zero'
+	# if number == 1:
+	# 	return 'one'
+	# if number == 2:
+	# 	return 'two'
+	# if number == 3:
+	# 	return 'three'
+	# if number == 4:
+	# 	return 'four'
+	# if number == 5:
+	# 	return 'five'
+	# if number == 6:
+	# 	return 'six'
+	# if number == 7:
+	# 	return 'seven'
+	# if number == 8:
+	# 	return 'eight'
+	# if number == 9:
+	# 	return 'nine'
+	# return ''
+
+def binary_search(list: list[int], target: int) -> bool:
  	"""
  	Write a recursive function that returns True if the target
- 	exisits in the list and False otherwise.
+ 	exists in the list and False otherwise.
  	"""
- 	pass
+ 	# if the length of the list is 1
+ 	# 	if the item in the list is the target
+ 	#		return True
+ 	#	return False
+
+ 	if len(list) == 1:
+ 		if target == list[0]:
+ 			return True
+ 		return False
+ 	mid = len(list) // 2
+ 	if list[mid] == target:
+ 		return True
+ 	if list[mid] < target:
+ 		return binary_search(list[mid+1:], target)
+ 	else: # list[mid] > target
+ 		return binary_search(list[0:mid], target)
 
 def main():
-	print(find_char_a(''))
-
+	pass
+	
 if __name__ == '__main__':
 	main()
