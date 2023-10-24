@@ -41,10 +41,55 @@ def last_length(phrase: str) -> int:
 		i -= 1
 	return count
 
+def merge_sorted_lists(list1: list, list2: list) -> list:
+	result = []
+
+	# append to result
+	list1_index = 0
+	list2_index = 0
+
+	while list1_index < len(list1) and list2_index < len(list2):
+		if list1[list1_index] <= list2[list2_index]:
+			result.append(list1[list1_index])
+			list1_index += 1
+		else:
+			result.append(list2[list2_index])
+			list2_index += 1
+
+	# if we aren't at the end of list1, add the rest
+	while list1_index < len(list1):
+		result.append(list1[list1_index])
+		list1_index += 1
+
+	# if we aren't at the end of list2, add the rest
+	while list2_index < len(list2):
+		result.append(list2[list2_index])
+		list2_index += 1
+
+	return result
+
+def valid_phone(string: str) -> bool:
+	# (415)555-1212 -> True
+	# (718)3334567 -> False
+	# 123-456-7896 -> False
+	# 1234567892 -> False
+	# (aaa)bbb-cccc -> False
+	# (9ab)12334r5 -> False
+
+	# length must be 13
+	# string[0] == '('
+	# string[4] == ')'
+	# string[8] == '-'
+	# area_code = string[1:4]
+	# prefix = string[5:8]
+	# extension = string[9:]
+
+
+
 
 def main():
-	print(last_length('the quick brown dog'))
-	print(last_length('exam on wednesday'))
+	print(merge_sorted_lists([1, 3, 4, 5, 7, 12], [2, 6, 9, 12, 14]))
+
 
 	# print(is_palindrome_rec('maam'))
 	# print(is_palindrome_rec('cat'))
