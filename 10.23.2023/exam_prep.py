@@ -84,6 +84,10 @@ def valid_phone(string: str) -> bool:
 	# prefix = string[5:8]
 	# extension = string[9:]
 
+	# make sure area_code, prefix, and extension are numbers
+	# -- use isdigit method of string
+	# -- create a list of all digits and iterate over to confirm in list
+	# -- try to convert each to int (int(area_code))
 
 
 

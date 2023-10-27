@@ -66,8 +66,6 @@ def is_palindrome(word: str) -> bool:
 	# return True
 
 
-
-
 def main():
 	# fun_with_strings()
 	result = is_palindrome('died')
