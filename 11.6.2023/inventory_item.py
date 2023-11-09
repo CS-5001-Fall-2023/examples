@@ -14,17 +14,19 @@ class Item:
 	def get_name(self):
 		return self.name
 
-
 	# Test 1
 	# create an instance of Item
 	# call update_quantity with number_purchased <= quantity
 	# check if quantity is correct
 
 	def update_quantity(self, number_purchased):
-		if self.quantity >= number_purchased:
+		if (self.quantity >= number_purchased
+			and number_purchased > 0):
 			self.quantity -= number_purchased
 		# TODO: what happens if there aren't enough
 		# TODO: number_purchased not an int
 
 	def change_price(self, new_price):
 		self.price = new_price		
+
+		

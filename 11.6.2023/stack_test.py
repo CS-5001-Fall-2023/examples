@@ -1,0 +1,21 @@
+from stack import Stack
+
+stack = Stack(10)
+stack.push(9)
+stack.push(8)
+stack.pop()
+stack.push(17)
+stack.pop()
+stack.push(2)
+stack.push(49)
+stack.pop()
+stack.pop()
+stack.push(45)
+stack.push(55)
+
+print(stack.pop()) 
+print(stack.size())
+stack.debug()
+print(stack.pop()) 
+print(stack.pop()) 
+print(stack.pop()) 
