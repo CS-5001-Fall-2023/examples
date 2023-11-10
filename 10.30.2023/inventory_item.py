@@ -1,6 +1,6 @@
 class Item:
 
-	def __init__(self, name, quantity, price, weight, sku):
+	def __init__(self, name, quantity=0, price=0, weight=0, sku=0):
 		self.name = name
 		self.quantity = quantity
 		self.price = price
@@ -18,4 +18,4 @@ class Item:
 		self.quantity = new_quantity
 
 	def change_price(self, new_price):
-		self.price = new_price
+		self.price = new_price		

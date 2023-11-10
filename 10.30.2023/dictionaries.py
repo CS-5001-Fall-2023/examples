@@ -1,5 +1,15 @@
 gradebook = {
-	'John': [90, 75, 82, 95],
+	'John': {
+		'scores': [],
+		'id': 1234,
+		'assignments': {
+			'homework': [90, ],
+			'projects': []
+		}
+	}
+
+
+	[90, 75, 82, 95],
 	'Harvey': [89, 89, 87, 72]
 }
 
