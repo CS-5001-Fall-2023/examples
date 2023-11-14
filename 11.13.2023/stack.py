@@ -21,3 +21,4 @@ class Stack:
 	def debug(self):
 		print(self.items)
 
+
